@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Edit Note</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Edit Note</h1>
+    <form action="/note/<%= note._id %>/edit" method="post" class="note-form">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" value="<%= note.title %>" required>
+      <label for="content">Content</label>
+      <textarea id="content" name="content" rows="4" required><%= note.content %></textarea>
+      <button type="submit" class="note-btn">Save Changes</button>
+    </form>
+    <a href="/dashboard" class="back-btn">Back to Dashboard</a>
+  </div>
+</body>
+</html>

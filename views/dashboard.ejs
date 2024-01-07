@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Dashboard</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Welcome, <%= user.username %>!</h1>
+    <div class="dashboard-links">
+      <a href="/logout" class="logout-btn">Logout</a>
+      <a href="/note/add" class="add-note-btn">Add a Note</a>
+    </div>
+    <div class="notes">
+      <% notes.forEach(note => { %>
+        <div class="note">
+          <h2 class="note-title"><%= note.title %></h2>
+          <p class="note-content"><%= note.content %></p>
+          <div class="note-actions">
+            <a href="/note/<%= note._id %>/edit" class="edit-btn">Edit</a>
+            <a href="/note/<%= note._id %>/delete" class="delete-btn">Delete</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>
